@@ -3,7 +3,6 @@ function set_issue_summary(obj_target_uuid, obj_list_uuid) {
 
     // Set page info
     obj_task = JSON.parse(getCookie(obj_list_uuid.uuid[i]));
-    console.log(obj_task);
 
     var elem_summary = document.getElementById("summary")
     
@@ -126,7 +125,7 @@ function set_task_in_page(obj) {
   a.appendChild(img);
 }
 
-function get_task_info(req_uuid_task) {
+function get_task_info(req_uuid_task, set_page = 1) {
   $.ajax({
     url: "https://tplanet-backend.townway.com.tw/tasks/" + req_uuid_task,
     type: "GET",
@@ -144,7 +143,9 @@ function get_task_info(req_uuid_task) {
        update_ticket(req_uuid_task, obj);
 
        // Set tasks in weg page
-       set_task_in_page(JSON.parse(getCookie(obj.uuid)));
+       if (set_page == 1) {
+         set_task_in_page(JSON.parse(getCookie(obj.uuid)));
+       }
 
     },
     error: function(xhr, ajaxOptions, thrownError){
@@ -165,6 +166,9 @@ function get_user_uuid_tasks(username) {
     data:  dataJSON,
     success: function(returnData) {
        const obj = JSON.parse(returnData);
+       // Set Cookie
+       setCookie("list_tasks", obj.uuid, 1);
+
        // Set task info
        for (var i = 0; i < obj.uuid.length; i++)  {
          var target_ticket = "";
