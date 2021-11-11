@@ -28,7 +28,8 @@
           success: function(returnData) {
 	    const obj = JSON.parse(returnData);
             setCookie("jwt", obj.token, 1);
-	    setCookie("username", $("#email").val(), 1);
+	    setCookie("username", obj.username, 1);
+	    setCookie("email", $("#email").val(), 1);
 	    console.log("Get JWT from cookie" +  getCookie("jwt"));
 	    window.location.replace("/eid-web/eid.html");
           },
