@@ -13,27 +13,19 @@ body {
 border-width: 8px !important;
 }
 
+.border-width-lg{
+border-width: 8px !important;
+}
+
 .logo-md {
   width: 80%;
+.logo-sm {
+width: 65%;
 }
-
-.bg-cover {<<<<<<< wallet
-26
- 
-
-  background-size: cover;
-  background-position: center center;
+.logo-sm {
+width: 65%;
 }
-
-.logo-md {
-width: 80%;
 }
-
-.bg-cover {
-background-size: cover;
-background-position: center center;
-}
-
 .bg-contain {
 background-size: contain;
 background-position: center center;
