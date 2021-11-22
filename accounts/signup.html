@@ -12,6 +12,7 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" 
       integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     <link href="../static/css/style.css" rel="stylesheet" type="text/css">
+    <script src="../static/js/config.js"></script>
     <script src="../static/js/cookies.js"></script>
     <script>
     $(function () {
@@ -22,7 +23,7 @@
         dataJSON.email =  $("#email").val();
         e.preventDefault();
         $.ajax({
-          url: "https://eid-backend.townway.com.tw/accounts/signup",
+          url: HOST_URL + "/accounts/signup",
           type: "POST",
     	  crossDomain: true,
           data:  dataJSON,
@@ -31,7 +32,7 @@
             setCookie("jwt", obj.token, 1);
 	    setCookie("username", $("#username").val(), 1);
 	    console.log("Get JWT from cookie" +  getCookie("jwt"));
-	    window.location.replace("/eid-web/eid.html");
+	    window.location.replace("/eid.html");
           },
           error: function(xhr, ajaxOptions, thrownError){
             console.log(thrownError);
