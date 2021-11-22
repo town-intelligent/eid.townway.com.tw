@@ -3,7 +3,7 @@ function draw_associate_did(baseNodes, baseLinks)
   var str_list_tasks = getCookie("list_tasks");
   if (str_list_tasks === "") {
     // Redirect to issue page
-    window.location.replace("/eid-web/issues.html");
+    window.location.replace("/issues.html");
   }
 
   var list_tasks = str_list_tasks.split(",");
@@ -131,7 +131,7 @@ function submit_weight() {
   var dataJSON = {};
   dataJSON.username = getCookie("username");
   $.ajax({
-    url: "https://eid-backend.townway.com.tw/tasks/list",
+    url: HOST_URL_EID_DAEMON + "/tasks/list",
     type: "POST",
     async: false,
     crossDomain: true,

@@ -76,7 +76,7 @@ function ticket_summary(uuid_target) {
   var dataJSON = {};
   dataJSON.username = getCookie("username");
   $.ajax({
-    url: "https://eid-backend.townway.com.tw/tasks/list",
+    url: HOST_URL_EID_DAEMON + "/tasks/list",
     type: "POST",
     async: false,
     crossDomain: true,
@@ -116,7 +116,7 @@ function set_task_in_page(obj) {
 
   var a = document.createElement("a"); 
   a.src = obj.thumbnail;
-  a.href = "/eid-web/issues-1.html?uuid=" + obj.uuid;
+  a.href = "/issues-1.html?uuid=" + obj.uuid;
   
   // Append
   elem_issues_list.appendChild(col_md_4);
@@ -127,7 +127,7 @@ function set_task_in_page(obj) {
 
 function get_task_info(req_uuid_task, set_page = 1) {
   $.ajax({
-    url: "https://tplanet-backend.townway.com.tw/tasks/" + req_uuid_task,
+    url: HOST_URL_TPLANET_DAEMON + "/tasks/" + req_uuid_task,
     type: "GET",
     async: false,
     crossDomain: true,
@@ -159,7 +159,7 @@ function get_user_uuid_tasks(username) {
   var dataJSON = {};
   dataJSON.username = username;
   $.ajax({
-    url: "https://eid-backend.townway.com.tw/tasks/list",
+    url: HOST_URL_EID_DAEMON + "/tasks/list",
     type: "POST",
     async: false,
     crossDomain: true,

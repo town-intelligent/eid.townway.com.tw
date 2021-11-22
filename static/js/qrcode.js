@@ -3,7 +3,7 @@ function get_task(url) {
 
   var path = url.split("/");
   var uuid_task = path[4];
-  var url_task_save = "https://eid-backend.townway.com.tw/tasks/save";
+  var url_task_save = HOST_URL_EID_DAEMON + "/tasks/save";
 
   var username = getCookie("username");
 
@@ -16,19 +16,19 @@ function get_task(url) {
       console.log(returnData);
 
       // Localhost only
-      // window.location.replace("/eid-web/issues.html");
+      // window.location.replace("/issues.html");
 
       // Git page
-      window.location.replace("/eid-web/issues.html");
+      window.location.replace("/issues.html");
     },
     error: function(xhr, ajaxOptions, thrownError){
       console.log(thrownError);
       
       // Localhost only
-      // window.location.replace("/eid-web/issues.html");
+      // window.location.replace("/issues.html");
 
       // Git page
-      window.location.replace("/eid-web/issues.html");
+      window.location.replace("/issues.html");
     }
   });
 }
