@@ -23,7 +23,7 @@
         dataJSON.email =  $("#email").val();
         e.preventDefault();
         $.ajax({
-          url: HOST_URL + "/accounts/signup",
+          url: HOST_URL_EID_DAEMON + "/accounts/signup",
           type: "POST",
     	  crossDomain: true,
           data:  dataJSON,

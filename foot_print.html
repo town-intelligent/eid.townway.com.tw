@@ -12,6 +12,7 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" 
       integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     <link href="static/css/style.css" rel="stylesheet" type="text/css">
+    <script src="static/js/config.js"></script>
     <script src="static/js/cookies.js"></script>
     <script src="static/js/auth.js"></script>
     <script src="static/js/issues.js"></script>
@@ -34,7 +35,7 @@
 	var dataJSON = {};
 	dataJSON.username = getCookie("username");
 	$.ajax({
-	  url: "https://eid-backend.townway.com.tw/tasks/list",
+	  url: HOST_URL_EID_DAEMON + "/tasks/list",
 	  type: "POST",
 	  async: false,
 	  crossDomain: true,
@@ -48,7 +49,7 @@
              for (var i = 0; i < obj.uuid.length; i++)  {  
 	       if (getCookie(obj.uuid[i]) == "") {
 	         // Redirect to issue page
-		 window.location.replace("/eid-web/issues.html");
+		 window.location.replace("/issues.html");
 	       }
 	     }
 	  },
@@ -70,16 +71,16 @@
             </a>
               <ul class="nav nav-tabs w-100 mr-3">
                 <li class="nav-item">
-                  <a class="nav-link" href="/eid-web/eid.html">身分證</a>
+                  <a class="nav-link" href="/eid.html">身分證</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="/eid-web/issues.html">永續合作</a>
+                  <a class="nav-link" href="/issues.html">永續合作</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link active" href="/eid-web/foot_print.html">數位足跡</a>
+                  <a class="nav-link active" href="/foot_print.html">數位足跡</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="/eid-web/wallet.html">錢包</a>
+                  <a class="nav-link" href="/wallet.html">錢包</a>
                 </li>
               </ul>
               <a class="navbar-brand mr-0" href="#">
