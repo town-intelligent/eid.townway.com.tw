@@ -39,6 +39,7 @@ function GoogleClientInit() {
 			//client_id 和 scope 兩者參數必填
 			// clientId: CLIENT_ID,
 			clientId: "1080674192413-b1vnqslm4gif3p9ntaj4ifl4i572p0bn.apps.googleusercontent.com",
+			plugin_name: 'hello',
 			//scope列表參考：https://developers.google.com/people/api/rest/v1/people/get
 			//"profile"是簡寫，要用完整scope名稱也可以
 			scope: "profile",//"https://www.googleapis.com/auth/userinfo.profile",
