@@ -95,6 +95,7 @@
       checkAuth();
       navbar();
     </script>
+
   </head>
 
   <body onload="init();">
@@ -490,7 +491,24 @@
                 </p>
                 <p class="mb-0" style="font-size: 12px">
                   專案 : 全體參與者於永續合作中累積的權重。
+                  <button type="button" id="verify_for" class="btn btn-primary click">驗證任務</button>
                 </p>
+                <script>
+                  document.getElementById("verify_for").onclick = function() {
+
+                    for (let i = 1; i <= 27; i++) {
+                      let element = document.getElementById(`person_s${i}`);
+                      if (element) {
+                          element.innerText = '0';
+                      }
+                    }
+                    setLocalStorage("target", "");
+                    alert("驗證成功!");
+                  };
+                </script>
+
+
+
               </div>
               <!-- <div class="col-6"> -->
               <div class="col-md-7 col-12">
